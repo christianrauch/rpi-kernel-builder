@@ -15,6 +15,18 @@ docker run --rm -it \
 ```
 
 
+inside docker:
+
+```bash
+KERNEL=kernel_2712
+make bcm2712_defconfig
+```
+
+```bash
+make -j"$(nproc)" Image.gz modules dtbs
+```
+
+
 ```bash
 # generate default ".config"
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcm2712_defconfig
@@ -22,7 +34,9 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcm2712_defconfig
 ```
 
 
-
+```bash
+make -j2 Image.gz modules dtbs
+```
 
 
 

@@ -36,8 +36,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update \
     && apt install -y --no-install-recommends \
-        git \
         bc bison flex libssl-dev make gcc \
+        build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
