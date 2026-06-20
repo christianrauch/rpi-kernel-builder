@@ -6,7 +6,7 @@ docker build -t rpi-kernel-builder .
 
 ```bash
 cd ./workspace/
-git clone --depth=1 --branch rpi-6.18.y https://github.com/raspberrypi/linux.git
+git clone --depth=1 --branch rpi-7.1.y https://github.com/raspberrypi/linux.git
 ```
 
 ```bash
