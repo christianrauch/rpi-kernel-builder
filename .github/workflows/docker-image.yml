@@ -18,13 +18,12 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag rpi-kernel-builder
 
-
-    - run: git clone --depth=1 --branch rpi-6.18.y https://github.com/raspberrypi/linux.git
+    - run: |
+        cd ./workspace/
+        git clone --depth=1 --branch rpi-6.18.y https://github.com/raspberrypi/linux.git
 
     - name: build
       run: |
         docker run --rm \
-          -v "$PWD/linux/:/workspace/linux/" \
-          -v "$PWD/config/:/workspace/config/"\
-          -v "$PWD/output/:/workspace/output/"\
-          rpi-kernel-builder ./build.sh
+          -v "$PWD/workspace/:/workspace/"\
+          rpi-kernel-builder ./workspace/build.sh

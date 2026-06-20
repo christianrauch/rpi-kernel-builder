@@ -5,15 +5,14 @@ docker build -t rpi-kernel-builder .
 ```
 
 ```bash
+cd ./workspace/
 git clone --depth=1 --branch rpi-6.18.y https://github.com/raspberrypi/linux.git
 ```
 
 ```bash
 docker run --rm \
-  -v "$PWD/linux/:/workspace/linux/" \
-  -v "$PWD/config/:/workspace/config/"\
-  -v "$PWD/output/:/workspace/output/"\
-  rpi-kernel-builder ./build.sh
+  -v "$PWD/workspace/:/workspace/"\
+  rpi-kernel-builder ./workspace/build.sh
 ```
 
 
