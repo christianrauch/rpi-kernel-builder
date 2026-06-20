@@ -15,9 +15,10 @@ docker run --rm \
   rpi-kernel-builder /workspace/build.sh
 ```
 
-docker run --rm -it \
-  -v "$PWD/workspace/:/workspace/"\
-  rpi-kernel-builder
+```bash
+cd /boot/
+sudo flash-kernel 7.1.0-rt-raspi
+```
 
 
 ```bash
