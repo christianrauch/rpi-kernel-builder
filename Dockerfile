@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
-ARG DEBIAN_VERSION=13
-FROM debian:${DEBIAN_VERSION}-slim
+ARG UBUNTU_VERSION=26.04
+FROM ubuntu:${UBUNTU_VERSION}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
