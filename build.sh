@@ -1,1 +1,4 @@
-git clone --depth=1 --branch rpi-7.1.y https://github.com/raspberrypi/linux.git
+KERNEL=kernel_2712
+make bcm2712_defconfig
+
+scripts/kconfig/merge_config.sh .config my.fragment

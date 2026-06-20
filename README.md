@@ -5,7 +5,7 @@ docker build -t rpi-kernel-builder .
 ```
 
 ```bash
-git clone --depth=1 --branch rpi-7.1.y https://github.com/raspberrypi/linux.git
+git clone --depth=1 --branch rpi-6.18.y https://github.com/raspberrypi/linux.git
 ```
 
 ```bash
@@ -14,13 +14,25 @@ docker run --rm -it \
   rpi-kernel-builder
 ```
 
+```bash
+docker run --rm -it \
+  -v "$PWD/:/workspace" \
+  rpi-kernel-builder
+```
+
 
 inside docker:
 
 ```bash
+cd linux
 KERNEL=kernel_2712
 make bcm2712_defconfig
+
+./scripts/kconfig/merge_config.sh -m .config ../rt.config
+make olddefconfig
 ```
+
+
 
 ```bash
 make -j"$(nproc)" Image.gz modules dtbs
