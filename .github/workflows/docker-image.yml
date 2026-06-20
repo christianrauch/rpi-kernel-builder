@@ -40,4 +40,7 @@ jobs:
     - uses: actions/upload-artifact@v7
       with:
         name: kernel-debs
-        path: ./workspace/linux-*.deb
+        path: |
+          ./workspace/linux-*.deb
+          ./workspace/linux-upstream_*.buildinfo
+          ./workspace/linux-upstream_*.changes
