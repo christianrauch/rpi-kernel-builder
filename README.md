@@ -20,6 +20,18 @@ cd /boot/
 sudo flash-kernel 7.1.0-rt-raspi
 ```
 
+```bash
+sudo ln -sf vmlinuz-7.1.0-rt /boot/vmlinuz
+sudo ln -sf initrd.img-7.1.0-rt /boot/initrd.img
+#sudo ln -sf dtb-7.1.0-rt /boot/dtb
+sudo ln -sf dtbs/7.1.0-rt/./bcm2712-rpi-5-b.dtb /boot/dtb
+
+sudo flash-kernel
+```
+
+```bash
+sudo apt install linux-image-raspi-realtime
+```
 
 ```bash
 docker run --rm -it \
