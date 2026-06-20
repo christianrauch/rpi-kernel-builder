@@ -15,6 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v6
 
+    - name: Cache Docker images.
+      uses: ScribeMD/docker-cache@0.5.0
+      with:
+        key: docker-${{ runner.os }}-${{ hashFiles(paths) }}
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag rpi-kernel-builder
 
