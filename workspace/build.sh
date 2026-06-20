@@ -11,4 +11,4 @@ make bcm2712_defconfig
 # make olddefconfig
 
 # build
-make -j"$(nproc)" Image.gz modules dtbs
+make -j Image.gz modules dtbs bindeb-pkg
