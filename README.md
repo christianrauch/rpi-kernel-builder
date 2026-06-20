@@ -30,7 +30,7 @@ sudo flash-kernel
 ```
 
 ```bash
-sudo apt install linux-image-raspi-realtime
+sudo apt install linux-raspi-realtime
 ```
 
 ```bash
