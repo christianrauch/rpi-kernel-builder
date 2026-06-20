@@ -38,6 +38,7 @@ RUN apt update \
     && apt install -y --no-install-recommends \
         bc bison flex libssl-dev make gcc \
         build-essential \
+        debhelper-compat kmod libdw-dev:native libelf-dev:native python3:native rsync \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
