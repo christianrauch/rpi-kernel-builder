@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd ../linux
+cd linux
 
 # generate default config
 KERNEL=kernel_2712

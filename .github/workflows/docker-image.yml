@@ -26,4 +26,4 @@ jobs:
       run: |
         docker run --rm \
           -v "$PWD/workspace/:/workspace/"\
-          rpi-kernel-builder ./workspace/build.sh
+          rpi-kernel-builder /workspace/build.sh
