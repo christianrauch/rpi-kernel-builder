@@ -32,3 +32,12 @@ jobs:
         docker run --rm \
           -v "$PWD/workspace/:/workspace/"\
           rpi-kernel-builder /workspace/build.sh
+
+    - name: check output
+      run: |
+        ls ./workspace
+
+    - uses: actions/upload-artifact@v7
+      with:
+        name: my-artifact
+        path: ./workspace/linux-*.deb
